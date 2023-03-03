@@ -10,7 +10,6 @@ const allCheckBox = document.querySelectorAll("input[type=checkbox]");
 const copyBtn = document.querySelector("[data-copy]");
 const passwordDisplay = document.querySelector("[data-passwordDisplay]");
 const generateBtn = document.querySelector(".generateButton");
-
 const symbols = '~`!@#$%^&*()_-+={[}]|:;"<,>.?/';
 
 //initially
