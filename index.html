@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="w-[100vw] h-[100vh] overflow-hidden flex justify-center items-center mx-auto bg-[var(--primary)]">
+        <!-- content section -->
+        <div class="w-[90%] max-w-[450px]">
+            <!-- heading -->
+            <div>
+                <h1 class="text-[var(--heading)] opacity-[0.75] uppercase tracking-[2px] text-center leading-[1.2] font-bold text-[2rem]">
+                    Password Generator
+                </h1>
+            </div>
+
+            <!-- password display -->
+            <div class="relative bg-[var(--secondary)] rounded-[1rem] my-[1rem] pt-[0.35rem] border-b-[0.35rem] border-[var(--border)]">
+                <input readonly placeholder="Password" data-passwordDisplay class="w-[100%] uppercase outline-none border-none passDisplay py-[1.15rem]
+                pl-[1rem] font-[500] text-[1.5rem] leading-[30px] tracking-[1px] pr-[3.5rem] bg-transparent">
+                <!-- copy btn -->
+                <button data-copy class="absolute right-[1.5rem] top-[50%] -translate-y-[50%] cursor-pointer text-[var(--copy)]">
+                    <span class="tooltip" data-copyMsg></span>
+                    <i class="fa-solid fa-copy"></i>
+                </button>
+            </div>
+
+            <!-- main section -->
+            <div class="w-[100%] bg-[var(--secondary)] p-[2rem] rounded-[1rem] border-b-[0.35rem] border-solid border-[var(--border)]">
+                <!-- password length -->
+                <div class="flex justify-between items-center">
+                    <p class="text-[var(--text)] text-[1.5rem]">Password length</p>
+                    <p data-lengthNumber class="text-[var(--counter)] text-[1.5rem] font-[600]">0</p>
+                </div>
+
+                <!-- slider -->
+                <div>
+                    <input data-lengthSlider type="range" min="1" max="20" step="1" class="slider appearance-none w-[100%] mt-[2rem] mb-[1.5rem] border-none outline-none 
+                    h-[0.75rem] cursor-pointer bg-[var(--slider-bar)] rounded-[1rem] sliderBg">
+                </div>  
+
+                <!-- character selector -->
+                <div>
+                    <div class="my-[1rem] flex items-center gap-[1rem] check">
+                        <input type="checkbox" id="uppercase" class="appearance-none w-[20px] h-[20px] border-[1px] border-solid border-[var(--copy)]
+                        cursor-pointer rounded-[0.35rem] relative">
+                        <label for="uppercase" class="text-[var(--text)] text-[1.25rem] tracking-[0.75px]">Include Uppercase Letters</label>
+                    </div>
+                    <div class="my-[1rem] flex items-center gap-[1rem] check">
+                        <input type="checkbox" id="lowercase" class="appearance-none w-[20px] h-[20px] border-[1px] border-solid border-[var(--copy)]
+                        cursor-pointer rounded-[0.35rem] relative">
+                        <label for="uppercase" class="text-[var(--text)] text-[1.25rem] tracking-[0.75px]">Include Lowercase Letters</label>
+                    </div>
+                    <div class="my-[1rem] flex items-center gap-[1rem] check">
+                        <input type="checkbox" id="numbers" class="appearance-none w-[20px] h-[20px] border-[1px] border-solid border-[var(--copy)]
+                        cursor-pointer rounded-[0.35rem] relative">
+                        <label for="uppercase" class="text-[var(--text)] text-[1.25rem] tracking-[0.75px]">Include Numbers</label>
+                    </div>
+                    <div class="my-[1rem] flex items-center gap-[1rem] check">
+                        <input type="checkbox" id="symbols" class="appearance-none w-[20px] h-[20px] border-[1px] border-solid border-[var(--copy)]
+                        cursor-pointer rounded-[0.35rem] relative">
+                        <label for="uppercase" class="text-[var(--text)] text-[1.25rem] tracking-[0.75px]">Include Symbols</label>
+                    </div>
+                </div>
+
+                <!-- strength indicator -->
+                <div class="flex justify-between items-center mt-[1.75rem] mb-[2rem]">
+                    <p class="text-[var(--text)] text-[1.5rem]">Strength</p>
+                    <div data-indicator style="background-color: rgb(204, 204, 204); box-shadow: rgb(204, 204, 204) 0px 0px 12px 1px;"
+                    class="w-[1.5em] h-[1.5rem] rounded-[50%] "></div>
+                </div>
+
+                <!-- generate password button -->
+                <button class="generateButton w-[100%] py-[1rem] bg-[var(--slider-bar2)] text-center rounded-[0.75rem] border-b-[0.35rem] border-[var(--gen-pass)]
+                border-solid uppercase tracking-[1px] text-[var(--gen-pass)] font-[600] text-[1.25rem] cursor-pointer">
+                    Generate Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/bf80e64e8a.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
