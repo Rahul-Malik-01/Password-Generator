@@ -48,10 +48,10 @@ body {
 
 .tooltip {
     position: absolute;
-    background-color: var(--vb-violet2);
-    color: var(--vb-yellow);
+    background-color: var(--copy);
+    color: var(--heading);
     font-size: 1.25rem;
-    top: -35px;
+    top: -45px;
     left: -25px;
     padding: 5px 10px;
     border-radius: 1rem;
